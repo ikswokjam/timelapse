@@ -95,11 +95,7 @@ def aantalfotos():
         "secondeninterval": secondsinterval,
         "numphotos": numphotos
         }
-#    print(data)
     return numphotos
-
-
-#sleep(sunwait(now))
 
 for i in range(sunwait(now)):
     progress_wait(i, sunwait(now))
@@ -110,7 +106,7 @@ for i in range(aantalfotos()):
     timestamp = math.ceil(datetime.timestamp(now))
     tegaan = (aantalfotos() - (i+1))
     gedaan = i
-    camera.capture('./foto/image{0:10d}.jpg'.format(timestamp))
+    camera.capture('/home/[user]/timelapse/scripts/foto/image{0:10d}.jpg'.format(timestamp))
     tijd = datetime.fromtimestamp(timestamp)
     progress_timelapse(i+1, aantalfotos())
     print ( str(tijd) + " - " + str(i+1) + "/"+ str(aantalfotos()))
